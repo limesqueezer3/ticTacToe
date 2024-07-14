@@ -89,7 +89,28 @@ const controller = (function(p1, p2, model) {
     return {drawTile};
 })(p1, p2, model);
 
+
+// view part
+function setupOnClick (controller, model, p1, p2) {
+    for (let i = 0; i < 9; i++) {
+        const tileView = document.querySelector(`.tile${i+1}`);
+        const clickHandler = (e) => {
+            let row = Math.floor(i / 3);
+            let col = i % 3;
+            e.target.removeEventListener('click', clickHandler);
+            controller.drawTile(row, col);
+            // console.log(model.isWinner(p1));
+            // console.log(model.isWinner(p2));
+            // model.consoleLogBoard();
+        }
+        tileView.addEventListener("click", clickHandler);
+    }
+}
+
+setupOnClick(controller, model, p1, p2);
+
 model.consoleLogBoard();
+
 // controller.drawTile(1,2);
 // controller.drawTile(0,2);
 // controller.drawTile(2,2);

@@ -1,0 +1,27 @@
+body {
+    margin: 0px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+
+.grid-container {
+    display:grid;
+    grid-template: repeat(3, 150px) / repeat(3, 150px);
+    /* grid-template-areas:
+    "tile1 tile2 tile3"
+    "tile4 tile5 tile6"
+    "tile7 tile8 tile9" */
+}
+
+.tile {
+    border-style: solid;
+}
+
+
+
+
