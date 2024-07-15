@@ -99,20 +99,13 @@ function setupOnClick (controller, model, p1, p2) {
             let col = i % 3;
             e.target.removeEventListener('click', clickHandler);
             controller.drawTile(row, col);
-            // console.log(model.isWinner(p1));
-            // console.log(model.isWinner(p2));
-            // model.consoleLogBoard();
+            // implement further here
+            console.log(model.isWinner(p1));
+            console.log(model.isWinner(p2));
+            model.consoleLogBoard();
         }
         tileView.addEventListener("click", clickHandler);
     }
 }
 
 setupOnClick(controller, model, p1, p2);
-
-model.consoleLogBoard();
-
-// controller.drawTile(1,2);
-// controller.drawTile(0,2);
-// controller.drawTile(2,2);
-// controller.drawTile(2,1);
-model.consoleLogBoard();
